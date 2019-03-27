@@ -35,14 +35,27 @@
         padding: 0 0.5em;
     }
 
+    span {
+        float: left;
+        font-size: 2em;
+        color: $primary-color;
+
+        @media screen and (max-width: 768px) {
+            font-size: 1.2em;
+        }
+    }
+
     .soft_left {
         float: left;
         font-weight: bold;
-        width: 20%;
 
         span:first-child {
             padding-right: 0.2em;
             padding-top: 0.1em;
+
+            @media screen and (max-width: 768px) {
+                padding-top: 0.5em;
+            }
 
             img {
                 display: block;
@@ -52,13 +65,14 @@
     }
 
     .soft_right {
-        width: 16em;
         float: right;
 
         span {
             font-size: 20px;
         }
-
+        .soft_call_div {
+            float: right;
+        }
         span:first-child {
             padding-top: 0.1em;
             padding-right: 1em;
@@ -71,15 +85,7 @@
         }
     }
 
-    span {
-        float: left;
-        font-size: 2em;
-        color: $primary-color;
 
-        @media screen and (max-width: 768px) {
-            font-size: 1.5em;
-        }
-    }
 }
 
 // tab栏切换区域
@@ -89,7 +95,7 @@
     background-color: $primary-color;
     color: $primary-color-text;
     position: fixed;
-    z-index: 24;
+    z-index: 2;
 
     @media screen and (max-width: 768px) {
         padding: 0;
@@ -128,6 +134,10 @@
     height: 104px;
     top: 0;
 
+    @media screen and (max-width: 768px) {
+        height: auto;
+    }
+
     ul {
         display: block;
 
@@ -142,10 +152,14 @@
 
     li {
         float: left;
-        width: 15%;
         text-align: center;
         height: 2.9em;
         border-top: 3px solid $primary-color;
+
+        @media screen and (max-width: 768px) {
+            height: auto;
+            padding: 0;
+        }
     }
 
     li.active {
@@ -154,17 +168,32 @@
     }
 }
 
+.top_container {
+    padding: 60px 0 0 0;
+
+    @media screen and (max-width: 768px) {
+        padding: 0;
+        padding-top: 20px;
+    }
+}
+
 // 最上侧banner区域
 .soft_banner {
     display: block;
     width: 100%;
     margin-top: 104px;
-    height: 570px;
-    background: url(src/pmp_bg.png);
-    background-size: 1920px 550px;
+    height: 530px;
+    background: url(src/npdpbg.png);
+    background-size: 1920px 600px;
     background-position: center 0;
     background-repeat: no-repeat;
-    padding: 100px 0 0 0;
+
+    @media screen and (max-width: 768px) {
+        margin: 0;
+        margin-top: 73px;
+        background-size: 768px 400px;
+        height: 360px;
+    }
 
     .soft_banner_img {
         width: 100%;
@@ -173,17 +202,34 @@
             display: block;
             width: 60%;
             margin: auto;
+
+            @media screen and (max-width: 768px) {
+                width: 100%;
+                margin: auto;
+                margin-top: 2em;
+            }
         }
 
         dt {
             width: 10em;
             font-weight: normal;
-            font-size: 1.5em;
+            font-size: 2em;
             display: block;
             margin: auto;
             text-align: center;
             color: #fff;
             letter-spacing: 2px;
+            margin-bottom: 2em;
+        }
+
+        span {
+            display: block;
+            width: 16em;
+            text-align: center;
+            margin: auto;
+            line-height: 1.5;
+            text-align: center;
+            color: #fff;
         }
 
         h3 {
@@ -202,6 +248,10 @@
                 padding-bottom: 2em;
                 width: 33%;
 
+                @media screen and (max-width: 768px) {
+                    width: 50%;
+                }
+
                 span {
                     display: block;
                     text-align: center;
@@ -209,77 +259,35 @@
                     line-height: 2em;
                     color: #fff;
                     margin: auto;
-                }
-            }
-        }
-
-        .pmp_top_ul {
-            li {
-                span {
-                    border-width: 0;
+                    background-color: #1c1398;
                     background-image: url(src/pmp_start.png);
-                    background-size: contain;
                     background-repeat: no-repeat;
-                }
-            }
-        }
-
-        .npdp_top_ul {
-            li {
-                span {
-                    height: 2em;
-                    line-height: 1.8em;
-                    background-image: url(src/npdp_text_box.png);
+                    background-size: 140px 28px;
                 }
             }
         }
     }
-
-    .pmp_banner_img {
-        dt {
-            width: 100%;
-
-            span:first-child {
-                padding-right: 0.8em;
-                position: relative;
-            }
-        }
-
-        img {
-            margin-top: 3em;
-        }
-    }
-
-    .npdp_banner_img {
-        img {
-            margin-top: 5em;
-        }
-    }
-}
-
-.pmp_banner {
-    margin-top: 60px;
-}
-
-.npdp_banner {
-    background-image: url(src/npdpbg.png);
-    margin-top: 102px;
-    height: 550px;
-    background-size: 1920px 550px;
 }
 
 //活动新闻区域
 .soft_act_new {
     width: 100%;
-    padding-left: 6%;
-    padding-top: 6em;
+    padding: 6em 0 0 6%;
     position: relative;
     z-index: 1;
     height: initial;
 
+    @media screen and (max-width: 768px) {
+        padding: 0;
+    }
+
     .soft_act_title {
         padding-bottom: 4em;
-        height: 12em;
+        height: 8em;
+
+        @media screen and (max-width: 768px) {
+            height: 5em;
+        }
 
         span {
             position: relative;
@@ -320,7 +328,7 @@
             content: ' ';
             display: block;
             background: url(src/arrow_top.png);
-            background-size: 46px 44px;
+            background-size: cover;
             background-repeat: no-repeat;
         }
     }
@@ -370,6 +378,17 @@
     height: 100%;
     overflow: hidden;
     padding: 5% 0% 2% 0%;
+
+    @media screen and (max-width: 768px) {
+        overflow: scroll;
+        padding: 0;
+    }
+}
+
+.soft_act_content3 {
+    @media screen and (max-width: 768px) {
+        padding-top: 3em;
+    }
 }
 
 .soft_act_content1,
@@ -400,7 +419,11 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    padding-left: 10%;
+    padding-left: 6%;
+
+    @media screen and (max-width: 768px) {
+        padding: 0;
+    }
 
     li {
         float: left;
@@ -409,6 +432,12 @@
         text-align: center;
         opacity: 0.8;
         padding: 1em;
+
+        @media screen and (max-width: 768px) {
+            width: 100%;
+            padding: 0;
+            height: auto;
+        }
 
         dt {
             display: block;
@@ -479,59 +508,57 @@
     span {
         float: left;
         width: 33%;
-        padding-left: 10%;
         text-align: left;
         line-height: 2em;
+
+        padding-left: calc(16% - 5em);
 
         @media screen and (max-width: 768px) {
             width: 100%;
             margin-bottom: 1em;
+            padding: 0;
         }
     }
 
-    button {
+    button,
+    a.button {
         background-color: #347dbb;
-        color: #FFFFFF;
+        color: $primary-color-text;
         line-height: 2em;
-        width: 10em;
         border-radius: 2px;
         float: left;
         padding-left: 2em;
         position: relative;
+        text-align: center;
+
+        @media screen and (min-width: 768px) {
+            width: 10em;
+        }
     }
 
-    button::before {
+    button::before,
+    a.button::before {
         content: ' ';
         position: absolute;
-        left: 1.2em;
+        left: 0.3em;
         top: 0.3em;
         display: block;
-        width: 2em;
+        width: 1.5em;
         height: 1.5em;
         background-repeat: no-repeat;
         background-size: contain;
     }
 
-    span:first-child {
-        button::before {
-            background-image: url(src/feiyong.png);
-        }
+    span:first-child a.button::before {
+        background-image: url(src/feiyong.png);
     }
 
-    span:nth-of-type(2) {
-        button::before {
-            background-image: url(src/passnum.png);
-        }
+    span:nth-of-type(2) a.button::before {
+        background-image: url(src/passnum.png);
     }
 
-    span:nth-of-type(3) {
-        button::before {
-            background-image: url(src/enlist.png);
-        }
-    }
-
-    button:first-child::before {
-        background-image: url(src/button_logo.png);
+    span:nth-of-type(3) a.button::before {
+        background-image: url(src/enlist.png);
     }
 }
 
@@ -545,11 +572,19 @@
         border-right: 1px dotted $active_border_color;
         padding-top: 2em;
 
+        @media screen and (max-width: 768px) {
+            padding-top: 0;
+        }
+
         li {
             float: left;
             width: 100%;
             padding-left: 20%;
             padding-bottom: 2em;
+
+            @media screen and (max-width: 768px) {
+                padding: 0;
+            }
 
             span {
                 float: left;
@@ -573,7 +608,9 @@
 }
 
 // 考试信息区域
-.soft_act_content2 {}
+.soft_act_content2 {
+    padding-top: 2em;
+}
 
 .soft_info_content {
     overflow: hidden;
@@ -750,6 +787,102 @@
     width: 100%;
     padding: 2em 0;
 
+    @media screen and (max-width: 768px) {
+        padding: 0;
+        padding-top: 1em;
+    }
+
+    span {
+        display: block;
+        width: 100%;
+        font-size: 1.2em;
+        line-height: 2em;
+        text-align: center;
+    }
+}
+
+.soft_two_title {
+    .soft_two_content {
+        width: 100%;
+
+        dt {
+            display: block;
+            font-size: 1.5em;
+            margin: auto;
+            text-align: center;
+            position: relative;
+            width: 5em;
+        }
+
+        dt:before {
+            content: ' ';
+            display: block;
+            width: 2em;
+            position: absolute;
+            height: 2em;
+            left: -2em;
+            top: -0.7em;
+            background-image: url(src/team_title.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    }
+
+    .soft_two_content2 {
+        dt {
+            width: 9em;
+        }
+    }
+}
+
+// 学习部分
+.soft_largest_box4 {
+    background-image: url(src/bg_01.png);
+    background-color: #b40912;
+    background-size: 1920px 550px;
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+}
+
+.soft_learn_part {
+    padding: 0 2em;
+    position: relative;
+    z-index: 1;
+
+    @media screen and (max-width: 768px) {
+        padding: 0;
+    }
+}
+
+.soft_learn_part::before,
+.soft_learn_part::after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    z-index: -1;
+}
+
+.soft_learn_title {
+    dt {
+        font-size: 2em;
+        display: block;
+        margin: auto;
+        text-align: center;
+        position: relative;
+        font-weight: normal;
+    }
+}
+
+// 二级标题
+.soft_two_big {
+    height: 4em;
+}
+
+// 标题描述
+.soft_title_notes {
+    width: 100%;
+    padding: 2em 0;
+
     span {
         display: block;
         width: 100%;
@@ -865,6 +998,10 @@
 // 课程方案区域
 .soft_lesson_part {
     padding: 3em 0;
+
+    @media screen and (max-width: 768px) {
+        padding: 0;
+    }
 }
 
 .none {
@@ -875,6 +1012,11 @@
     width: 100%;
     padding: 2em;
     overflow: hidden;
+
+    @media screen and (max-width: 768px) {
+        padding: 0;
+        padding-top: 2em;
+    }
 
     .soft_lesson_left,
     .soft_lesson_right {
@@ -983,36 +1125,62 @@
 
 .soft_lesson_top {
     width: 100%;
-    height: 210px;
+    height: 182px;
+    padding: 0 5%;
     overflow: hidden;
-    padding: 2em 4em;
 
     span {
         float: left;
-        font-weight: bold;
         font-size: 1.2em;
         line-height: 2em;
         text-align: center;
+        position: relative;
+        font-weight: bold;
+    }
+
+    span::before {
+        content: ' ';
+        display: block;
+        width: 4em;
+        height: 4em;
+        position: absolute;
+        left: calc(50% - 2em);
+        top: 1em;
+        background-image: url(src/yun.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        @media screen and (max-width: 768px) {
+            top: 0.5em;
+        }
+    }
+
+    span:nth-child(2)::before,
+    span:nth-child(3)::before {
+        @media screen and (max-width: 768px) {
+            top: 2.5em;
+        }
     }
 
     span:first-child {
         width: 100%;
         color: #08345a;
-        padding-bottom: 1em;
+        margin-top: 2em;
+        margin-bottom: 3em;
+
+        @media screen and (max-width: 768px) {
+            margin-bottom: 1.5em;
+        }
     }
 
     span:nth-of-type(2) {
-        width: 100%;
+        width: 50%;
         color: #08345a;
-        text-align: left;
-        padding-left: 6em;
     }
 
     span:nth-of-type(3) {
-        width: 100%;
+        width: 50%;
         color: #821c21;
-        text-align: right;
-        padding-right: 8em;
     }
 }
 
@@ -1054,15 +1222,13 @@
         margin: auto;
         margin-top: -1em;
         background-color: #fff;
-    }
-}
 
-.soft_team_title {
-    @media screen and (min-width: 768px) {
-        dt {
-            width: 6em;
+        @media screen and (max-width: 768px) {
+            font-size: 1.5em;
+            width: 7em;
         }
     }
+
 }
 
 .soft_lesson_title {
@@ -1087,6 +1253,11 @@
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
     position: relative;
+
+    @media screen and (max-width: 768px) {
+        width: 70%;
+
+    }
 
     span {
         position: relative;
@@ -1118,6 +1289,10 @@
         border-left: 21px solid #ccc;
         border-right: 21px solid transparent;
         border-bottom: 21px solid transparent;
+
+        @media screen and (max-width: 768px) {
+            margin-top: -22px;
+        }
     }
 
     span:first-child::before {
@@ -1151,38 +1326,41 @@
     left: calc(50% - 3.5em);
 }
 
-// 软考项目管理专业学习难点区域
-.pmp_lesson_title {
-    .soft_team_title {
-        @media screen and (min-width: 768px) {
-            dt {
-                width: 8em;
-            }
-        }
-    }
-}
-
-.pmp_team_title {
-    .soft_team_title {
-        @media screen and (min-width: 768px) {
-            dt {
-                width: 6em;
-            }
-        }
-    }
-}
 
 .soft_class_way {
     @media screen and (min-width: 768px) {
         dt {
-            width: 6em;
+            width: 8em;
         }
     }
+}
+
+.npdp_lessson_way {
+    dt {}
 }
 
 .soft_titile_box {
     padding-top: 2em;
     padding-bottom: 1em;
+}
+
+.npdp_lesson_title {
+    dt {
+        width: 13em;
+
+        @media screen and (max-width: 768px) {
+            font-size: 1.5em;
+            width: 7.5em;
+        }
+    }
+
+    .soft_project_title {
+        @media screen and (max-width: 768px) {
+            height: 2em;
+        }
+    }
+
+
 }
 
 .soft_team_content {
@@ -1327,7 +1505,7 @@
 
 // 行业内训区域
 .soft_largest_box8 {
-    background-color: #347dbb;
+
     background-color: #347dbb;
     background-image: url(src/chanp_1.png);
     background-repeat: no-repeat;
@@ -1337,6 +1515,10 @@
     .row {
         padding-top: 225px;
         padding-bottom: 225px;
+
+        @media screen and (max-width: 768px) {
+            padding: 70px 0;
+        }
     }
 }
 
@@ -1344,6 +1526,10 @@
     position: relative;
     z-index: 1;
     padding-top: 6em;
+
+    @media screen and (max-width: 768px) {
+        padding-top: 2em;
+    }
 }
 
 // 制定服务区域
@@ -1430,13 +1616,24 @@
     }
 }
 
+// 警告文字区域
+.error_span {
+    font-size: 1.2em;
+    display: block;
+    line-height: 2em;
+}
+
 // 开班计划区域
 .soft_open_row {}
 
 .soft_open_part {
     padding-left: 3em;
     padding-top: 5em;
-    overflow: hidden;
+
+    @media screen and (max-width: 768px) {
+        padding: 0;
+        padding-top: 3em;
+    }
 
     .soft_open_title {
         @media screen and (min-width: 768px) {
@@ -1446,19 +1643,24 @@
         }
     }
 
+    .soft_open_topbox {
+        padding-bottom: 1em;
+    }
+
     .soft_open_content {
         position: relative;
-        padding: 2em 3em 4em 3em;
         margin-right: 3em;
         width: 98%;
         float: left;
+        padding-left: 2em;
+        padding-top: 1em;
         border-top: 3px solid $open_border_color;
     }
 
     .soft_open_describe {
         .soft_content1 {
             width: 100%;
-            background-color: #e2e2e2;
+            background-color: $background-color;
             height: 6em;
             overflow: hidden;
             padding-top: 0.5em;
@@ -1494,7 +1696,7 @@
             font-weight: bold;
             line-height: 3em;
             padding-left: 2.2em;
-            border-bottom: 2px solid #d8d8d8;
+            border-bottom: 2px solid $bgc-light;
         }
 
         span:before {
@@ -1517,6 +1719,7 @@
         padding: 0;
         width: 23%;
         overflow: hidden;
+        margin-bottom: 1em;
 
         @media screen and (max-width: 768px) {
             width: 100%;
@@ -1679,17 +1882,17 @@
         width: 1em;
         height: 1em;
         position: absolute;
-        left: 0;
-        background-color: $open_border_color;
+        left: 2em;
+        background-color: #08345a;
         top: -2em;
     }
 
     .soft_open_content::after {
         content: ' ';
         width: 3px;
-        height: 37em;
+        height: 100%;
         position: absolute;
-        left: 2em;
+        left: 1em;
         background-color: $open_border_color;
         top: -2em;
     }
@@ -2390,6 +2593,10 @@
 .npdp_steam_lb {
     .item {
         height: 30em;
+
+        @media screen and (max-width: 768px) {
+            height: 20em;
+        }
     }
 
     .soft_team_bottom {
